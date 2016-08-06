@@ -1,9 +1,9 @@
 (function(){
 	angular
-		.module(turtleFacts)
+		.module('turtleFacts')
 		.controller("quizCrtl" , QuizController);
 
-		QuizController.$inject = ['quizMetrics'];
+		QuizController.$inject = ['quizMetrics' , 'DataService'];
 
 		function QuizController(quizMetrics){
 			var vm = this;
