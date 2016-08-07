@@ -13,7 +13,7 @@
 				Learn about all the turtles below before you decide to take on the <strong>TURTLE QUIZ</strong>
 			</h3>
 		</div>
-		<div ng-controller = "listCtrl as list" ng-hide="list.quizMetrics.quizActive">
+		<div ng-controller = "listCtrl as list" ng-hide="list.quizMetrics.quizActive || list.quizMetrics.resultsActive">
 			<form class="form-inline well well-sm clearfix">
 				<span class="glyphicon glyphicon-search"></span>
 				<input 
@@ -155,7 +155,10 @@
 			</div>
 
 		</div> <!-- end quiz-controller -->
-		<div ng-controller = "resultsCtrl as results"></div>
+		<!-- results controller -->
+		<div ng-controller = "resultsCrtl as results" ng-show = "results.quizMetrics.resultsActive">
+			
+		</div>
 	</div> <!-- end container -->
 
 
@@ -170,5 +173,6 @@
 	<script src = "js/controllers/quiz.js"></script>
 	<script src = "js/factories/quizMetrics.js"></script>
 	<script src = "js/factories/dataservice.js"></script>
+	<script src="js/controllers/results.js"></script>
 </body>
 </html>
