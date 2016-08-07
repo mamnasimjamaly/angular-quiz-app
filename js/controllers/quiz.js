@@ -15,6 +15,8 @@
 			vm.questionAnswered = questionAnswered;
 			vm.setActiveQuestion = setActiveQuestion;
 			vm.selectAnswer = selectAnswer;
+			vm.error = false;
+			vm.finalize = false;
 
 			function setActiveQuestion(index) {
 				if(index == undefined) {
@@ -28,6 +30,11 @@
 						} else {
 							vm.activeQuestion = 0;
 						}
+
+						if(vm.activeQuestion === 0) {
+							vm.error = true;
+						}
+
 						if(DataService.quizQuestions[vm.activeQuestion].selected == null) {
 						breakOut = true;
 						}
@@ -45,6 +52,15 @@
 					numQuestionsAnswered++;
 					if(numQuestionsAnswered >= length) {
 						//finaize quiz
+						for(var i = 0; i < length ; i++) {
+							if(DataService.quizQuestions[i].selected === null) {
+								setActiveQuestion(i);
+								return;
+							}
+						}
+						vm.error = false;
+						vm.finalize = true;
+						return;
 					}
 				}
 				vm.setActiveQuestion();

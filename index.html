@@ -115,6 +115,12 @@
 			</div>
 			<div class="row">
 				<h3>Question: </h3>
+				<div class="alert alert-danger" ng-show = "quiz.error">
+
+					<!-- &times creates a little x -->
+					You have not answered all of the questions!
+					<button class="close" ng-click = "quiz.error = false">&times</button>
+				</div>
 				<div class="well">
 					<div class="row">
 						<div class="col-xs-12">
