@@ -30,3 +30,7 @@
 	width: 100%;
 	height: auto;
 }
+
+.answer-image-selected {
+	opacity: 0.5; 
+}
