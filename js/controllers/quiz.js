@@ -17,6 +17,7 @@
 			vm.selectAnswer = selectAnswer;
 			vm.error = false;
 			vm.finalize = false;
+			vm.finalizeAnswers = finalizeAnswers;
 
 			function setActiveQuestion(index) {
 				if(index == undefined) {
@@ -68,6 +69,15 @@
 
 			function selectAnswer(index) {
 				DataService.quizQuestions[vm.activeQuestion].selected = index;
+			}
+
+			function finalizeAnswers() {
+				vm.finalise = false;
+    			numQuestionsAnswered = 0;
+    			vm.activeQuestion = 0;
+   	 			quizMetrics.markQuiz();
+   	 			quizMetrics.changeState('quiz' , false);
+   	 			quizMetrics.changeState('results' , true);
 			}
 		}
 })();

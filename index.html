@@ -121,7 +121,7 @@
 					You have not answered all of the questions!
 					<button class="close" ng-click = "quiz.error = false">&times</button>
 				</div>
-				<div class="well">
+				<div class="well" ng-hide = "quiz.finalize">
 					<div class="row">
 						<div class="col-xs-12">
 							<h4>{{quiz.activeQuestion+1 + ". " + quiz.dataService.quizQuestions[quiz.activeQuestion].text}}</h4>
@@ -143,10 +143,19 @@
 					</div>
 					<button class="btn btn-warning" ng-click = "quiz.questionAnswered()">Continue</button>
 				</div>
+				<div class="well well-sm" ng-show = "quiz.finalize">
+					<div class="row">
+						<div class="col-xs-12">
+							<h3>Are you sure you want to submit your answers?</h3>
+							<button class="btn btn-success" ng-click = "quiz.finalizeAnswers()">Yes</button>
+							<button class="btn btn-danger" ng-click = "quiz.finalize = false">No</button>
+						</div>
+					</div>
+				</div>
 			</div>
 
 		</div> <!-- end quiz-controller -->
-
+		<div ng-controller = "resultsCtrl as results"></div>
 	</div> <!-- end container -->
 
 
