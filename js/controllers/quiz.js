@@ -72,7 +72,7 @@
 			}
 
 			function finalizeAnswers() {
-				vm.finalise = false;
+				vm.finalize = false;
     			numQuestionsAnswered = 0;
     			vm.activeQuestion = 0;
    	 			quizMetrics.markQuiz();
