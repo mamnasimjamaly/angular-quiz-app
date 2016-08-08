@@ -13,6 +13,7 @@
         	vm.activeQuestion = 0;
         	vm.setActiveQuestion = setActiveQuestion;
         	vm.calculatePerc = calculatePerc;
+        	vm.reset = reset;
 			
 			function getAnswerClass(index) {
 				if(index === quizMetrics.correctAnswers[vm.activeQuestion]){
@@ -27,6 +28,7 @@
         	}
 
         	function reset() {
+        		//Reset numCorrect, selected, correct values
         		quizMetrics.changeState("results" , false);
         		quizMetrics.numCorrect = 0;
 

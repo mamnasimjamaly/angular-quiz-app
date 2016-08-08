@@ -162,16 +162,6 @@
                <div class="col-xs-8">
                    <h2>Results:</h2>
                    <div class="btn-toolbar">
-                    	<!-- ng-repeat used again to loop through the possible answers to thequestions which are stored on -->
-		                <!-- the controller. The controller got that data from the quiz factory in js/factory/quiz.js -->
-
-		                <!-- ng-class is another angular directive. This directive will add a class to the element based  -->
-		                <!-- on the conditional it is provided. In this case it will add btn-sucess class if question.correct -->
-		                <!-- is true and will add btn-danger class if question.correct is false -->
-
-		                <!-- ng-click is again used to trigger a method on the controller called setActiveQuestion -->
-		                <!-- the method is passed the $index as an argument. $index is built into angular and holds -->
-		                <!-- the current index of the ng-repeat loop -->
                        <button class="btn"
                            ng-repeat="question in results.dataService.quizQuestions"
                            ng-class="{'btn-success': question.correct, 'btn-danger': !question.correct}"
