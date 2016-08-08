@@ -12,6 +12,7 @@
         	vm.getAnswerClass = getAnswerClass; 
         	vm.activeQuestion = 0;
         	vm.setActiveQuestion = setActiveQuestion;
+        	vm.calculatePerc = calculatePerc;
 			
 			function getAnswerClass(index) {
 				if(index === quizMetrics.correctAnswers[vm.activeQuestion]){
@@ -34,6 +35,10 @@
                 data.selected = null;
                 data.correct = null;
             	}
+        	}
+
+        	function calculatePerc() {
+        		return 100 * quizMetrics.numCorrect / DataService.quizQuestions.length;
         	}
 
 		}
